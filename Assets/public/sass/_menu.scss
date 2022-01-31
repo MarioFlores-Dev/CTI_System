@@ -1,0 +1,33 @@
+// MENU
+    .menu{
+        background: $principalColor;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100vw;
+        .brand{
+            padding: 5px;
+            a{
+                color: #fff;
+                font-weight: bold;
+                padding: 10px;
+                border: 1px solid;
+            }
+            img{
+                width: 60px;
+            }
+        }
+        .navigation{
+            ul{
+                li{
+                    list-style: none;
+                    display: inline-block;
+                    a{
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+    }
