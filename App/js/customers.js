@@ -18,7 +18,7 @@ $(document).ready(function(){
                             <td>${customer.lastname} </td>
                             <td>${customer.phonenumber} </td>
                             <td> 
-                                <button class = "customer-delete btn-danger">DesHabilitar</button>
+                                <button class = "customer-delete btn-danger p-1"><i class="bi bi-trash3-fill"></i></button>
                             </td>
                         </tr>
                     `
