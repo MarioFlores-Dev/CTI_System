@@ -10,12 +10,15 @@
     
     $json = array();
     while($row = mysqli_fetch_array($result)){
-        $json[] = array(
-            'name' => $row['name'],
-            'lastname' => $row['lastname'],
-            'phonenumber' => $row['phone_number'],
-            'id' => $row['id']
-        );
+        if($row['status'] == 1 ){
+            $json[] = array(
+                'name' => $row['name'],
+                'lastname' => $row['lastname'],
+                'phonenumber' => $row['phone_number'],
+                'createdate' => $row['create_date'],
+                'id' => $row['id']
+            );  
+        }
     }
 
     $jsonString = json_encode($json);
