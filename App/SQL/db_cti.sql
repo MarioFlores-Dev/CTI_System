@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-01-2022 a las 05:58:52
+-- Tiempo de generación: 03-02-2022 a las 07:09:05
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.0.13
 
@@ -73,39 +73,24 @@ CREATE TABLE `tbl_customers` (
   `id` int(11) NOT NULL,
   `name` varchar(50) DEFAULT NULL,
   `lastname` varchar(50) DEFAULT NULL,
-  `phone_number` int(11) DEFAULT NULL
+  `phone_number` int(11) DEFAULT NULL,
+  `status` int(11) DEFAULT 1,
+  `create_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `update_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tbl_customers`
 --
 
-INSERT INTO `tbl_customers` (`id`, `name`, `lastname`, `phone_number`) VALUES
-(1, 'Paco', 'Alonzo', 56487216),
-(2, 'Vivi', 'Flores', 42568974);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tbl_technicalservice`
---
-
-CREATE TABLE `tbl_technicalservice` (
-  `id` int(11) NOT NULL,
-  `id_customers` int(11) DEFAULT NULL,
-  `id_computertechnicalservice` int(11) DEFAULT NULL,
-  `description_fix` varchar(50) DEFAULT NULL,
-  `out_date` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `tbl_technicalservice`
---
-
-INSERT INTO `tbl_technicalservice` (`id`, `id_customers`, `id_computertechnicalservice`, `description_fix`, `out_date`) VALUES
-(1, 1, 1, 'Cambio de pantalla', '2022-01-14'),
-(2, 2, 2, 'Revision completa y arreglo de problemas', '2022-01-18'),
-(3, 2, 3, 'Se compuso el boton', '2022-01-17');
+INSERT INTO `tbl_customers` (`id`, `name`, `lastname`, `phone_number`, `status`, `create_date`, `update_date`) VALUES
+(3, 'Mario ', 'Flores', 59332609, 1, '2022-02-03 05:40:05', '2022-02-03 05:40:56'),
+(4, 'Luis', 'Tul', 45123678, 1, '2022-02-03 05:40:05', '2022-02-03 05:40:56'),
+(5, 'Alberto', 'Lopez', 12345678, 0, '2022-02-03 05:40:05', '2022-02-03 05:40:56'),
+(6, 'Vivian ', 'Flores', 77609665, 1, '2022-02-03 05:59:24', '2022-02-03 05:59:24'),
+(7, 'Jose', 'Soto', 45213698, 0, '2022-02-03 06:00:21', '2022-02-03 06:01:10'),
+(8, 'Luis', 'Alfaro', 45123689, 1, '2022-02-03 06:00:33', '2022-02-03 06:00:33'),
+(9, 'Alberto', 'Lopez', 67896325, 1, '2022-02-03 06:01:53', '2022-02-03 06:01:53');
 
 --
 -- Índices para tablas volcadas
@@ -130,14 +115,6 @@ ALTER TABLE `tbl_customers`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `tbl_technicalservice`
---
-ALTER TABLE `tbl_technicalservice`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_customers` (`id_customers`),
-  ADD KEY `id_computertechnicalservice` (`id_computertechnicalservice`);
-
---
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -157,24 +134,7 @@ ALTER TABLE `tbl_computerstechnicalservice`
 -- AUTO_INCREMENT de la tabla `tbl_customers`
 --
 ALTER TABLE `tbl_customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `tbl_technicalservice`
---
-ALTER TABLE `tbl_technicalservice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `tbl_technicalservice`
---
-ALTER TABLE `tbl_technicalservice`
-  ADD CONSTRAINT `tbl_technicalservice_ibfk_1` FOREIGN KEY (`id_customers`) REFERENCES `tbl_customers` (`id`),
-  ADD CONSTRAINT `tbl_technicalservice_ibfk_2` FOREIGN KEY (`id_computertechnicalservice`) REFERENCES `tbl_computerstechnicalservice` (`id`);
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
