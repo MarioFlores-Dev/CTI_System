@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-02-2022 a las 07:09:05
+-- Tiempo de generación: 09-02-2022 a las 18:17:01
 -- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.0.13
+-- Versión de PHP: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -73,6 +73,7 @@ CREATE TABLE `tbl_customers` (
   `id` int(11) NOT NULL,
   `name` varchar(50) DEFAULT NULL,
   `lastname` varchar(50) DEFAULT NULL,
+  `issue` varchar(150) NOT NULL,
   `phone_number` int(11) DEFAULT NULL,
   `status` int(11) DEFAULT 1,
   `create_date` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -83,14 +84,8 @@ CREATE TABLE `tbl_customers` (
 -- Volcado de datos para la tabla `tbl_customers`
 --
 
-INSERT INTO `tbl_customers` (`id`, `name`, `lastname`, `phone_number`, `status`, `create_date`, `update_date`) VALUES
-(3, 'Mario ', 'Flores', 59332609, 1, '2022-02-03 05:40:05', '2022-02-03 05:40:56'),
-(4, 'Luis', 'Tul', 45123678, 1, '2022-02-03 05:40:05', '2022-02-03 05:40:56'),
-(5, 'Alberto', 'Lopez', 12345678, 0, '2022-02-03 05:40:05', '2022-02-03 05:40:56'),
-(6, 'Vivian ', 'Flores', 77609665, 1, '2022-02-03 05:59:24', '2022-02-03 05:59:24'),
-(7, 'Jose', 'Soto', 45213698, 0, '2022-02-03 06:00:21', '2022-02-03 06:01:10'),
-(8, 'Luis', 'Alfaro', 45123689, 1, '2022-02-03 06:00:33', '2022-02-03 06:00:33'),
-(9, 'Alberto', 'Lopez', 67896325, 1, '2022-02-03 06:01:53', '2022-02-03 06:01:53');
+INSERT INTO `tbl_customers` (`id`, `name`, `lastname`, `issue`, `phone_number`, `status`, `create_date`, `update_date`) VALUES
+(12, 'Mauricio', '', 'Laptop ASUS 12', 30415345, 1, '2022-02-09 16:52:41', '2022-02-09 16:52:41');
 
 --
 -- Índices para tablas volcadas
@@ -134,7 +129,7 @@ ALTER TABLE `tbl_computerstechnicalservice`
 -- AUTO_INCREMENT de la tabla `tbl_customers`
 --
 ALTER TABLE `tbl_customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
