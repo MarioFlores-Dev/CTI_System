@@ -16,6 +16,7 @@
                 'lastname' => $row['lastname'],
                 'phonenumber' => $row['phone_number'],
                 'createdate' => $row['create_date'],
+                'issue' => $row['issue'],
                 'id' => $row['id']
             );  
         }

@@ -7,7 +7,8 @@ $('#customer-form').submit(function(e){
     const postData = {
         name: $('#name').val(),
         lastname: $('#lastname').val(),
-        phonenumber: $('#phonenumber').val()
+        phonenumber: $('#phonenumber').val(),
+        issue: $('#issue').val()
     };
     e.preventDefault();
     let url = '../logic/customers/customerAdd.php';
@@ -33,6 +34,7 @@ $('#customer-form').submit(function(e){
                             <td>${customer.id} </td>
                             <td>${customer.name} </td>
                             <td>${customer.lastname} </td>
+                            <td>${customer.issue} </td>
                             <td>${customer.phonenumber} </td>
                             <td>${customer.createdate} </td>
                             <td > 
