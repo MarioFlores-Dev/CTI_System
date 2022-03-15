@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-02-2022 a las 18:17:01
+-- Tiempo de generación: 15-03-2022 a las 05:54:32
 -- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.1.1
+-- Versión de PHP: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -85,7 +85,11 @@ CREATE TABLE `tbl_customers` (
 --
 
 INSERT INTO `tbl_customers` (`id`, `name`, `lastname`, `issue`, `phone_number`, `status`, `create_date`, `update_date`) VALUES
-(12, 'Mauricio', '', 'Laptop ASUS 12', 30415345, 1, '2022-02-09 16:52:41', '2022-02-09 16:52:41');
+(12, 'Mauricio', '', 'Laptop ASUS 12', 30415345, 1, '2022-02-09 16:52:41', '2022-02-09 16:52:41'),
+(13, 'Pablo', 'Paau', 'Reunion', 47293226, 1, '2022-02-12 03:14:01', '2022-02-12 05:04:03'),
+(14, 'oso', 'fuentes', 'toshiba', 56451203, 1, '2022-02-13 04:09:09', '2022-03-13 06:15:26'),
+(15, 'Antony', 'Velasquez', 'Servidor ', 47056421, 1, '2022-02-22 23:51:00', '2022-02-22 23:51:00'),
+(16, 'Oscar', 'Wiro', 'Reunion por zoom', 45127896, 1, '2022-03-13 06:14:02', '2022-03-13 06:14:55');
 
 --
 -- Índices para tablas volcadas
@@ -129,7 +133,7 @@ ALTER TABLE `tbl_computerstechnicalservice`
 -- AUTO_INCREMENT de la tabla `tbl_customers`
 --
 ALTER TABLE `tbl_customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
