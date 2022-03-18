@@ -22,7 +22,7 @@ $('#customer-form').submit(function(e){
 //Function to watch customers in the table
     function fetchCustomers(){
         $.ajax({
-            url: '../logic/customers/customerlist.php',
+            url: '../logic/customers/customerList.php',
             type: 'GET',
             success: function(response){
                 let customers = JSON.parse(response);
