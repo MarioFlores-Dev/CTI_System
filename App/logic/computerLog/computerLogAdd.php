@@ -7,11 +7,11 @@
     $ram = $_POST['ram'];
     $disk = $_POST['disk'];
     $sizeDisk = $_POST['sizeDisk'];
-    $state =$_POST[`state`];
+    $state =$_POST['state'];
 
     if(isset($marca) || isset($model)){
         $query = "INSERT INTO tbl_computerlog (marca, model, processor , ram, disk, sizeDisk, state)
-                    VALUES ("$marca","$model", "$processor", "$ram", "$disk", "$sizeDisk", "$state")";
+                    VALUES ('$marca','$model', '$processor', '$ram', '$disk', $sizeDisk, '$state')";
         $result = mysqli_query($connection, $query);
 
         if(!$result){
