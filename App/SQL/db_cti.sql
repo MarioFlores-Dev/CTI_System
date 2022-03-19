@@ -153,9 +153,22 @@ CREATE TABLE `tbl_computerLog` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 --
 --
---
-INSERT INTO `tbl_computerlog`(`id`, `marca`, `model`, `processor`, `ram`, `disk`, `sizeDisk`, `state`, `status`, `create_date`, `update_date`) VALUES
-                             (2,`DELL`,`Inspiron`,`core i5`,`8GB`,`SSD`,500,`Buen Estado`,1,`2022-03-17`,`2022-03-17`);
+-- 20220319 Comandos a efectuar en sql:
+drop table tbl_computerLog
+-- luego
+CREATE TABLE `tbl_computerLog` (
+  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `marca` varchar(50) DEFAULT NULL,
+  `model` varchar(50) DEFAULT NULL,
+  `processor` varchar(150) NOT NULL,
+  `ram` varchar(150) NOT NULL,
+  `disk` varchar(150) NOT NULL,
+  `sizeDisk` int(11) DEFAULT NULL,
+  `state` varchar(150) NOT NULL,
+  `status` int(11) DEFAULT 1,
+  `create_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `update_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+)
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
