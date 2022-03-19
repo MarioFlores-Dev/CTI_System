@@ -37,7 +37,7 @@ $('#customer-form').submit(function(e){
                             <td>${customer.issue} </td>
                             <td>${customer.phonenumber} </td>
                             <td>${customer.createdate} </td>
-                            <td > 
+                            <td> 
                                 <button class = "customer-update btn btn-success"><i class="fas fa-edit"></i></button>
                                 <button class = "customer-delete btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                             </td>
@@ -49,7 +49,15 @@ $('#customer-form').submit(function(e){
         });
     }
   
+    //Function for delete 
+    $(document).on('click', 'customer_delete', function(){
+        if(confirm('Esta seguro que desea eliminar este registro?')){
+            let element = $(this)[0].parentElement.parentElement;
+            let id = $(element).attr('');
+        }
 
+
+    });
 
 
 
